@@ -143,6 +143,30 @@ class GalleryController {
       next(exception);
     }
   };
+  listAllForhome=async(req, res,next)=>{
+    try {
+      let filter = {
+        status: "active"
+      };
+      if (req.query.search) {
+        filter = {
+          ...filter,
+          title: {
+            [Op.iLike]: `%${req.query.search}%`,
+          },
+        };
+      }
+      let { data, pagination } = await gallerySvc.getAllData(req.query, filter);
+      res.json({
+        data: data,
+        message: "List all data",
+        status: "OK",
+        options: pagination,
+      });
+    } catch (exception) {
+      next(exception);
+    }
+  }
 }
 
 const galleryCtrl = new GalleryController()

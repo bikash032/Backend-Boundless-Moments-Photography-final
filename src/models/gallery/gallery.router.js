@@ -20,7 +20,7 @@ galleryRoutes.post(
     galleryCtrl.createGallery
 );
 
-
+galleryRoutes.get("/front/",galleryCtrl.listAllForhome)
 
 galleryRoutes.get('/gallery/', loginCheck, checkPermission([UserRole.ADMIN]), galleryCtrl.listAllData)
 
