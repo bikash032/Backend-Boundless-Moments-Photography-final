@@ -2,16 +2,12 @@
 const bodyValidator = (schema) => {
     return async (req, res, next) => {
         try{
-         let data=req.body
-         console.log("dataaaaaa",data);
-         
-    
+         let data=req.body         
+         console.log("dataaaaaa",data);             
           if (req.file) {
             data.image = JSON.stringify(req.file)
           }
-    
-         
-            console.log("datafff",data.image);
+            console.log("datafff",data);
             
            
         let result = await schema.validateAsync(data, {
