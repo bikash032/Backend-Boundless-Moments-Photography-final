@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 let PORT = 9016;
-let HOST = "localhost";
+let HOST = "https://backend-boundless-moments-photography-final.vercel.app/";
 
 app.use((req, res, next) => {
     next({ code: 404, message: "Not Found", status: "NOT_FOUND" });
