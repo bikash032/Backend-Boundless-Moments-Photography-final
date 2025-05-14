@@ -1,3 +1,3 @@
 const app=require("../index")
-const serverless=require("serverless-http")
-module.exports=serverless(app)
+// const serverless=require("serverless-http")
+module.exports=app
