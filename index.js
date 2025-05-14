@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
-let PORT = 9016;
-let HOST = "https://backend-boundless-moments-photography-final.vercel.app";
+// let PORT = 9016;
+// let HOST = "backend-boundless-moments-photography-final.vercel.app";
 
 app.use((req, res, next) => {
     next({ code: 404, message: "Not Found", status: "NOT_FOUND" });
@@ -52,10 +52,11 @@ if (error instanceof MulterError) {
         status: status,
     });
 });
-app.listen(PORT, HOST, (error) => {
-    if (error) {
-        console.log("Error while connection network");
-    } else {
-        console.log(`http://${HOST}:${PORT} is connected successfully!!`);
-    }
-});
+// app.listen(PORT, HOST, (error) => {
+//     if (error) {
+//         console.log("Error while connection network");
+//     } else {
+//         console.log(`http://${HOST}:${PORT} is connected successfully!!`);
+//     }
+// });
+module.exports= app
