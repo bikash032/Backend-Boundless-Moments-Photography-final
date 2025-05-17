@@ -1,11 +1,6 @@
 require("dotenv").config();
 const cloudinary = require("cloudinary").v2;
 const fs = require("node:fs");
-// IIFE
-// (() => {
-
-// })();
-
 class CloudinaryService {
     constructor() {
         cloudinary.config({
